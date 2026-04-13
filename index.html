@@ -81,8 +81,8 @@ hr{border:none;border-top:1px solid var(--border)}
 
 footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;color:var(--gray);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase}
 
-.fade{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
-.fade.visible{opacity:1;transform:none}
+
+
 
 @media(max-width:960px){
   nav{padding:1rem 1.5rem}
@@ -132,7 +132,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
   </div>
 </div>
 
-<div class="section fade" id="portfolio">
+<div class="section" id="portfolio">
   <div class="section-eyebrow">Portfolio</div>
   <h2 class="section-title">Selected Projects</h2>
   <div class="grid">
@@ -202,7 +202,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 
 <hr>
 
-<div class="section fade" id="skills">
+<div class="section" id="skills">
   <div class="section-eyebrow">Toolbox</div>
   <h2 class="section-title">Skills &amp; Tools</h2>
   <div class="chips">
@@ -219,7 +219,7 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 
 <hr>
 
-<div class="section fade" id="about">
+<div class="section" id="about">
   <div class="section-eyebrow">About</div>
   <h2 class="section-title">Background</h2>
   <div class="about-grid">
@@ -280,3 +280,11 @@ footer{border-top:1px solid var(--border);padding:1.5rem 3rem;display:flex;justi
 </footer>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><scri
+</script>
+<script>
+window.addEventListener('load',()=>document.body.classList.add('ready'));
+const obs=new IntersectionObserver((e)=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:0.08});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
